@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rotating Line</title>
-
-	<link rel="stylesheet" href="styles.css">
+  <style>
+    #line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 2px;
+      background-color: #000;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transform-origin: center center;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	 <div id="line"></div>
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div id="line"></div>
 
+  <script>
+    const line = document.getElementById('line');
+    let angle = 0;
+
+    setInterval(() => {
+      angle += 2;
+      line.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+    }, 20);
+  </script>
 </body>
-
 </html>
 
